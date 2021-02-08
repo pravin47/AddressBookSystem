@@ -12,9 +12,10 @@ public class AddressBookSystem {
 		while (ans != false) {
 			System.out.println("Please Enter your Choice");
 			System.out.println("1 Add New Contact");
-			System.out.println("2 Edit The Particula Contact");
-			System.out.println("3 Show The All Contact");
-			System.out.println("4 Exit");
+			System.out.println("2 Edit The Particular Contact");
+			System.out.println("3 Delete Particular Contact");
+			System.out.println("4 Show The All Contact");
+			System.out.println("5 Exit");
 			int UserChoice = sc.nextInt();
 			switch (UserChoice) {
 			case 1:
@@ -26,9 +27,12 @@ public class AddressBookSystem {
 				break;
 
 			case 3:
+				DeleteContact();
+
+			case 4:
 				System.out.println(book);
 				break;
-			case 4:
+			case 5:
 				ans = false;
 			}
 
@@ -155,10 +159,26 @@ public class AddressBookSystem {
 				break;
 
 			}
-
+		} else {
+			System.out.println("Contact Has Been Not Found");
 		}
 
 	}
+
+	public static void DeleteContact() {
+
+		System.out.println("Enter the First Name you Want to Delete");
+		String Delete = sc.next();
+		boolean check1 = book.contains(Delete);
+		if (check1 == true) {
+			book.clear();
+			System.out.println("Contact Deleted Succesfully");
+		} else {
+			System.out.println("Contact Has Been Not Found");
+		}
+
+	}
+
 }
 
 class NewContact {
@@ -187,3 +207,4 @@ class NewContact {
 	}
 
 }
+
