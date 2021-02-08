@@ -12,8 +12,9 @@ public class AddressBookSystem {
 		while (ans != false) {
 			System.out.println("Please Enter your Choice");
 			System.out.println("1 Add New Contact");
-			System.out.println("2 Show All The Contact");
-			System.out.println("3 exit");
+			System.out.println("2 Edit The Particula Contact");
+			System.out.println("3 Show The All Contact");
+			System.out.println("4 Exit");
 			int UserChoice = sc.nextInt();
 			switch (UserChoice) {
 			case 1:
@@ -21,9 +22,13 @@ public class AddressBookSystem {
 				break;
 
 			case 2:
-				System.out.println(book);
+				EditContact();
+				break;
 
 			case 3:
+				System.out.println(book);
+				break;
+			case 4:
 				ans = false;
 			}
 
@@ -67,6 +72,93 @@ public class AddressBookSystem {
 
 	}
 
+	public static void EditContact() {
+
+		System.out.println("Enter the First Name you want to Edit ");
+		String Edit = sc.next();
+		boolean check = book.contains(Edit);
+		if (check == true) {
+			System.out.println("enter the field which you Want to Edit");
+			System.out.println(" 1 First Name");
+			System.out.println(" 2 Last Name");
+			System.out.println(" 3 Address ");
+			System.out.println(" 4 City");
+			System.out.println(" 5 State");
+			System.out.println(" 6 Zip");
+			System.out.println(" 7 Phone Number");
+			System.out.println(" 8 Email");
+			int Field = sc.nextInt();
+			switch (Field) {
+
+			case 1:
+				System.out.println("Enter the new First Name");
+				String NewFname = sc.next();
+				book.set(0, NewFname);
+				System.out.println(book);
+				System.out.println("Update Succefully");
+				break;
+
+			case 2:
+				System.out.println("Enter the new Last Name");
+				String NewLname = sc.next();
+				book.set(1, NewLname);
+				System.out.println(book);
+				System.out.println("Update Succefully");
+				break;
+
+			case 3:
+				System.out.println("Enter the new Address");
+				String Newaddres = sc.next();
+				book.set(2, Newaddres);
+				System.out.println(book);
+				System.out.println("Update Succefully");
+				break;
+
+			case 4:
+				System.out.println("Enter the new City");
+				String Newcity = sc.next();
+				book.set(3, Newcity);
+				System.out.println(book);
+				System.out.println("Update Succefully");
+				break;
+
+			case 5:
+				System.out.println("Enter the new state");
+				String Newstate = sc.next();
+				book.set(4, Newstate);
+				System.out.println(book);
+				System.out.println("Update Succefully");
+				break;
+
+			case 6:
+				System.out.println("Enter the new Zip");
+				String Newzip = sc.next();
+				book.set(5, Newzip);
+				System.out.println(book);
+				System.out.println("Update Succefully");
+				break;
+
+			case 7:
+				System.out.println("Enter the new Phone Number");
+				String Newph = sc.next();
+				book.set(6, Newph);
+				System.out.println(book);
+				System.out.println("Update Succefully");
+				break;
+
+			case 8:
+				System.out.println("Enter the new Email Address");
+				String Newemail = sc.next();
+				book.set(7, Newemail);
+				System.out.println(book);
+				System.out.println("Update Succefully");
+				break;
+
+			}
+
+		}
+
+	}
 }
 
 class NewContact {
@@ -95,4 +187,3 @@ class NewContact {
 	}
 
 }
-
